@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class CardDeck {
 
@@ -11,10 +12,25 @@ public class CardDeck {
                 cards.add(new Card(color, value));
             }
         }
+
+//        cards.add(new Card(Color.HEARTS, Value.NINE));
     }
 
     public static CardDeck createCardDeck(){
         return new CardDeck();
+    }
+
+    public Optional<Card> drawCard(){
+        Card drawedCard = null;
+        try{
+            drawedCard = cards.remove(0);
+            return Optional.of(drawedCard);
+        }
+        catch (IndexOutOfBoundsException e){
+            System.out.println("Heej");
+            return Optional.empty();
+        }
+
     }
 
 //    public CardDeck(List cards){
