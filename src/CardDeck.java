@@ -30,7 +30,10 @@ public class CardDeck {
             System.out.println("Heej");
             return Optional.empty();
         }
+    }
 
+    public boolean isEmpty(){
+        return cards.size() <= 0;
     }
 
 //    public CardDeck(List cards){

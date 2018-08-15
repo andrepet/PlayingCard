@@ -32,5 +32,26 @@ public class Main {
 //            System.out.println("THe deck is empty!");
 //        }
 
+
+        CardDeck myDeck = CardDeck.createCardDeck();
+        Card foundCard = null;
+
+        myDeck.drawCard();
+
+        while (!myDeck.isEmpty()){
+            Optional<Card> card = myDeck.drawCard();
+            if (card.isPresent()){
+                Card realCard = card.get();
+                if (realCard.getColor() == Color.SPADES && realCard.getValue() == Value.TWO){
+                    foundCard = realCard;
+                }
+            }
+        }
+        if (foundCard != null){
+            System.out.println("Found our card: " + foundCard.display());
+        }
+        else{
+            System.out.println("We could not find our card! :(");
+        }
     }
 }
