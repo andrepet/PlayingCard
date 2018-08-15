@@ -1,6 +1,6 @@
 public enum Color {
     SPADES,
     HEARTS,
-    CLOVES,
+    CLUBS,
     DIAMONDS
 }
